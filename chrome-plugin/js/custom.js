@@ -213,6 +213,11 @@ function loadGet() {
 
 function loadGetContent() {
   $.getJSON( getAPIURL() + '/info', { 'url': $( '#vidoeUrl' ).val() }, function( data ) {
+    var prefix = '';
+    if( typeof( localStorage['ydlcpPrefix'] ) != 'undefined' ) {
+      prefix = localStorage['ydlcpPrefix'];
+    }
+
     html  = '<div class="col-md-4 remove">';
     html += '  <img src="' + data.info.thumbnail + '" class="img-responsive img-thumbnail"/>';
     html += '</div>';
@@ -226,11 +231,11 @@ function loadGetContent() {
     html +=      data.info.ext;
     html += '  </p>';
     html += '  <p>';
-    html += '    <a href="' + data.info.url + '" class="btn btn-primary">';
+    html += '    <a href="' + prefix + data.info.url + '" class="btn btn-primary">';
     html += '      <span class="glyphicon glyphicon-play" aria-hidden="true"></span>';
     html += '      Play';
     html += '    </a>';
-    html += '    <a href="' + data.info.url + '" class="btn btn-primary" download>';
+    html += '    <a href="' + prefix + data.info.url + '" class="btn btn-primary" download>';
     html += '      <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>';
     html += '      Download';
     html += '    </a>';
@@ -257,11 +262,11 @@ function loadGetContent() {
         html += '    <td>' + val.ext + '</td>';
         html += '    <td>' + val.format.split( ' - ' )[1] + '</td>';
         html += '    <td>';
-        html += '    <a href="' + val.url + '" class="btn btn-default">';
+        html += '    <a href="' + prefix + val.url + '" class="btn btn-default">';
         html += '      <span class="glyphicon glyphicon-play" aria-hidden="true"></span>';
         html += '      Play';
         html += '    </a>';
-        html += '    <a href="' + val.url + '" class="btn btn-default" download>';
+        html += '    <a href="' + prefix + val.url + '" class="btn btn-default" download>';
         html += '      <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>';
         html += '      Download';
         html += '    </a>';
