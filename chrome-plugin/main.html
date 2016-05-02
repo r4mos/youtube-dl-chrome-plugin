@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <title>Youtube-dl Chrome Plugin</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+    <link rel="shortcut icon" type="image/png" href="img/logo.png"/>
+  </head>
+  <body>
+    <div class="navbar navbar-default">
+      <div class="container">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand collapse navbar-collapse" href="#Main">
+              <span><img src="img/logo.png"/></span>
+              Youtube-dl Chrome Plugin
+            </a>
+            <form id="getVideo" class="navbar-form navbar-left">
+              <div class="input-group">
+                <input id="vidoeUrl" type="text" class="form-control" placeholder="Video URL" />
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="submit">Get</button>
+                </span>
+              </div>
+            </form>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li id="btnExtractors">
+                <a href="#Extractors">
+                  <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
+                  Extractors
+                </a>
+              </li>
+              <li id="btnSettings">
+                <a href="#Settings">
+                  <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                  Settings
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/r4mos/youtube-dl-chrome-plugin">
+                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                  About
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="loading" class="container">
+      <div id="alertLoading" class="alert alert-dismissible alert-danger">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <strong>Can't connect</strong> to server. Please check <a class="alert-link" href="main.html#Settings">the settings page</a> and read <a class="alert-link" href="https://github.com/r4mos/youtube-dl-chrome-plugin">the documentation</a>
+      </div>
+      <img id="imgLoading" class="center-block" src="img/loading.gif" />
+    </div>
+    <div id="main" class="container well well-lg">
+      <h2 id="hMain">Youtube-dl Chrome Plugin</h2>
+      <p>Plugin for Chrome/Chromium to download videos from some video platforms using youtube-dl-api-server</p>
+    </div>
+    <div id="settings" class="container well well-lg">
+      <legend>Settings</legend>
+      <form id="saveSettings" class="form-horizontal">
+        <div class="form-group">
+          <label for="server" class="col-lg-2 control-label">Server</label>
+          <div class="col-lg-10">
+            <input type="text" class="form-control" id="server" placeholder="">
+            <span class="help-block">Domain or IP address that the server is using</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="port" class="col-lg-2 control-label">Port</label>
+          <div class="col-lg-10">
+            <input type="text" class="form-control" id="port" placeholder="">
+            <span class="help-block">Port number that the server is using</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="prefix" class="col-lg-2 control-label">Prefix</label>
+          <div class="col-lg-10">
+            <input type="text" class="form-control" id="prefix" placeholder="">
+            <span class="help-block">Prefix added to the video URL. You can use it to start downloads on another software or computer</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-10 col-lg-offset-2">
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="extractors" class="container well well-lg">
+      <legend>Extractors</legend>
+    </div>
+    <div id="get" class="container well well-lg">
+      <legend id="getLegend">Get Links</legend>
+    </div>
+  </body>
+  <script src="js/jquery-1.10.2.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/custom.js"></script>
+</html>
