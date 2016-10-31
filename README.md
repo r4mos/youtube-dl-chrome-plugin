@@ -46,9 +46,9 @@ To autostart, add a line to `/etc/rc.local` before `exit 0` with `python -m yout
 ###Windows
 To start using the server
 
-    python -m youtube_dl_server
+    python -m youtube_dl_server --number-processes 1
 
-To autostart, download [HStart](http://www.ntwind.com/software/hstart.html) and create a shortcut with `PATH\TO\hstat.exe /NOCONSOLE "python -m youtube_dl_server"` on your startup folder
+To autostart, download [HStart](http://www.ntwind.com/software/hstart.html) and create a shortcut with `PATH\TO\hstat.exe /NOCONSOLE "python -m youtube_dl_server --number-processes 1"` on your startup folder
 
 ###Chrome/Chromium plugin installation
 This plugin does not comply with [the policies of Chrome Web Store](https://developer.chrome.com/webstore/program_policies) so you can only manually install on [Dev & Canary releases](https://productforums.google.com/forum/?utm_campaign=2811969_hl_en_b_s1&utm_source=0&utm_medium=1#!category-topic/chrome/discuss-chrome/windows8/33-Beta/d35tIyH8dVM%5B1-25%5D):
