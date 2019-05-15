@@ -190,19 +190,16 @@ function loadExtractors() {
 }
 
 function loadGet() {
-  /* Waiting for https://github.com/jaimeMF/youtube-dl-api-server/pull/43 */
-  //$.getJSON( getAPIURL() + '/version', function( data ) {
-  //  $.each( data, function( key, val ) {
-  //    if( key == 'youtube-dl' ) {
-  //      $( '#getLegend' ).append(
-  //        ' <span class="badge remove">' +
-  //        val +
-  //        '</span>'
-  //      );
-  //    }
-  //  });
-  /* Meanwhile use */
-  $.getJSON( getAPIURL() + '/extractors', function( data ) {
+  $.getJSON( getAPIURL() + '/version', function( data ) {
+    $.each( data, function( key, val ) {
+      if( key == 'youtube-dl' ) {
+        $( '#getLegend' ).append(
+          ' <span class="badge remove">' +
+          val +
+          '</span>'
+        );
+      }
+    });
     loadGetContent();
   })
   .fail( function() {
@@ -212,7 +209,7 @@ function loadGet() {
 }
 
 function loadGetContent() {
-  $.getJSON( getAPIURL() + '/info', { 'url': $( '#vidoeUrl' ).val() }, function( data ) {
+  $.getJSON( getAPIURL() + '/info?url=' + $( '#vidoeUrl' ).val(), function( data ) {
     var prefix = '';
     if( typeof( localStorage['ydlcpPrefix'] ) != 'undefined' ) {
       prefix = localStorage['ydlcpPrefix'];

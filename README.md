@@ -39,9 +39,9 @@ For options `youtube-dl-api-server` you can read [the official documentation](ht
 #### Debian-based distributions
 To start using the server
 
-    youtube-dl-server
+    youtube-dl-server --number-processes 1
 
-To autostart, add a line to `/etc/rc.local` before `exit 0` with `python -m youtube_dl_server`
+To autostart, add a line to `/etc/rc.local` before `exit 0` with `python -m youtube_dl_server --number-processes 1`
 
 ### Windows
 To start using the server
