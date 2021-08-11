@@ -1,7 +1,7 @@
 {
   "name": "Youtube-dl Chrome Plugin",
   "description": "Plugin for Chrome/Chromium to download videos from some video platforms using youtube-dl-api-server",
-  "version": "0.2",
+  "version": "0.3",
   "options_page": "main.html",
   "background": {
     "scripts": ["js/background.js"]
